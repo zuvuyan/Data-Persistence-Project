@@ -15,8 +15,8 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     // Expose best score and name input field
-    [SerializeField] TextMeshProUGUI bestScoreText;
-    [SerializeField] TMP_InputField nameField;
+    [SerializeField]  public TextMeshProUGUI bestScoreText;
+    [SerializeField]  public TMP_InputField nameField;
 
     public string playerName = "";
 
