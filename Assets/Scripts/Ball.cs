@@ -7,13 +7,21 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody m_Rigidbody;
 
+    // Add blip audio
+    private AudioSource ballAudio;
+    public AudioClip blipSound;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+
+        ballAudio = GetComponent<AudioSource>();
     }
     
     private void OnCollisionExit(Collision other)
     {
+        ballAudio.PlayOneShot(blipSound, 0.3f);
+
         var velocity = m_Rigidbody.velocity;
         
         //after a collision we accelerate a bit
